@@ -15,6 +15,8 @@ my $disk_kB = 0;
 my $mem_kB  = 0;
 my $ok      = 0;
 
+my $verbose = 1;
+
 my $uname_s = `uname -s`;
 chomp($uname_s);
 
@@ -25,10 +27,13 @@ if ( $uptime_d =~ /up (\d+) days/ ) {
 }
 else {
     # If the system has been up for less than one day we could hit this
-    print "WARNING: Uptime format not recognised, or up for less than a day. Assuming 1 day\n";
+    print
+"WARNING: Uptime format not recognised, or up for less than a day. Assuming 1 day\n";
     $uptime_d = 1;
 }
-# printf "uname-s = '%s'   uptime = '%s'\n", $uname_s, $uptime_d;
+
+logmsg("uname: '$uname_s'");
+logmsg("uptime: '$uptime_d'");
 
 ###############################################################################
 # BSD
@@ -83,7 +88,7 @@ if (   $uname_s eq 'NetBSD'
         $MHz = ( $ncpu * $cpuf ) / 1000000;
     }
 
-    #printf "MHz: %ld\n",$MHz;
+    logmsg("MHz: $MHz");
 
     # Note: Original shows USED memory, but it isn't so easily available
     #       in e.g. Solaris, so this is TOTAL memory
@@ -93,7 +98,7 @@ if (   $uname_s eq 'NetBSD'
     }
     close($in);
 
-    #printf "mem_kB: %ld\n",$mem_kB;
+    logmsg("mem_kB: $mem_kB");
 
     my $dsk_dev        = 0;
     my $partition_size = 0;
@@ -114,7 +119,7 @@ if (   $uname_s eq 'NetBSD'
     }
     close $in;
 
-    #printf "disk_kB: %ld\n",$disk_kB;
+    logmsg("disk_kB: $disk_kB");
 
     $ok = 1;
 }
@@ -134,7 +139,7 @@ if ( $uname_s eq 'SunOS' ) {
     }
     close $in;
 
-    #printf "MHz: %ld\n",$MHz;
+    logmsg("MHz: $MHz");
 
     # Note: Original shows USED memory, but it isn't so easily available
     #       in e.g. Solaris, so this is TOTAL memory
@@ -144,7 +149,7 @@ if ( $uname_s eq 'SunOS' ) {
     }
     close($in);
 
-    #printf "mem_kB: %ld\n",$mem_kB;
+    logmsg("mem_kB: $mem_kB");
 
     open( $in, '-|', 'df -k -l' );
     my $dsk_dev        = 0;
@@ -165,7 +170,7 @@ if ( $uname_s eq 'SunOS' ) {
     }
     close $in;
 
-    #printf "disk_kB: %ld\n",$disk_kB;
+    logmsg("disk_kB: $disk_kB");
 
     $ok = 1;
 }
@@ -183,15 +188,14 @@ if ( $uname_s eq 'Linux' ) {
     }
     close $in;
 
-    #printf "MHz: %ld\n",$MHz;
-
+    logmsg("MHz: $MHz");
     open( $in, '-|', 'free | grep ^Mem | awk \'{print $2}\'' );
     while (<$in>) {
         $mem_kB += $_;
     }
     close $in;
 
-    #printf "mem_kB: %ld\n",$mem_kB;
+    logmsg("mem_kB: $mem_kB");
 
     # Note: Original shows USED memory, but it isn't so easily available
     #       in e.g. Solaris, so this is TOTAL memory
@@ -218,7 +222,7 @@ if ( $uname_s eq 'Linux' ) {
     }
     close $in;
 
-    #printf "disk_kB: %ld\n",$disk_kB;
+    logmsg("disk_kB: $disk_kB");
 
     $ok = 1;
 }
@@ -239,6 +243,11 @@ my $vpenis =
 printf "%.1fcm\n", $vpenis;
 
 exit 0;
+
+sub logmsg {
+    my $msg = shift;
+    print "$msg\n" if $verbose;
+}
 
 #### ORIGINAL vpenis.sh  SCRIPT WITH SOME ADDED WHITE-SPACE:
 #
