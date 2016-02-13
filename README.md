@@ -16,20 +16,20 @@
   Details of the latest version can be found on the official GitHub page
   project page under https://github.com/neechbear/vpenis.
 
+  The official project homepage is http://vpenis.sh.
+
  
 ## Installation
 
 
    ```bash
-  wget https://github.com/downloads/neechbear/vpenis/vpenis.sh
-  chmod +x
-  ./vpenis.sh
+   curl -s https://raw.githubusercontent.com/neechbear/vpenis/master/vpenis.pl | sudo perl
   ```
   
 
 ## Metrics
 
-The following system characterists go towards your score
+The following system characterists go towards your score.
  
   
 **Currently implemented**
