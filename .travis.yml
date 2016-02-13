@@ -8,6 +8,9 @@ matrix:
   allow_failures:
     - perl: blead       # ignore failures for blead perl
 sudo: false             # faster builds as long as you don't need sudo access
-before_install:
-  - eval $(curl https://travis-perl.github.io/init) --auto
-script: perl vpenis.pl
+#before_install:
+#  - eval $(curl https://travis-perl.github.io/init) --auto
+
+# Nothing to install
+install: true
+script: vpenis.pl
