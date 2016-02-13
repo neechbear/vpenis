@@ -2,7 +2,7 @@
 
 # vpenis
 
-> Virtual penis measuring score
+> Virtual penis measuring score.
 
 
 ## What is it?
@@ -16,7 +16,7 @@
   Details of the latest version can be found on the official GitHub page
   project page under https://github.com/neechbear/vpenis.
 
-  The official project homepage is http://vpenis.sh.
+  The official project homepage is http://vpenis.sh and http://vpenis.pl.
 
  
 ## Installation
