@@ -1,19 +1,27 @@
+---
 language: perl
+
 perl:
-  - "5.8"               # normal preinstalled perl
-matrix:
-  include:
-    - perl: 5.18
-      env: COVERAGE=1   # enables coverage+coveralls reporting
-  allow_failures:
-    - perl: blead       # ignore failures for blead perl
+  - "5.8"               # Oldest version on travis-ci
+  - "5.22"
+
+os:
+  - linux
+  - osx
+
+#matrix:
+#  include:
+#    - perl: 5.18
+#      env: COVERAGE=1   # enables coverage+coveralls reporting
+#  allow_failures:
+#    - perl: blead       # ignore failures for blead perl
 sudo: false             # faster builds as long as you don't need sudo access
 #before_install:
 #  - eval $(curl https://travis-perl.github.io/init) --auto
 
 # Nothing to install
 install: true
-script: 
+script:
     - ls -l
     - which perl
     - perl vpenis.pl
