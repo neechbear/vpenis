@@ -20,12 +20,12 @@ chomp($uname_s);
 
 my $uptime_d = `uptime`;
 chomp($uptime_d);
-if ( $uptime_d =~ /^\s+\S+\s+up\s+(\S+\s+\S+,\s+\S+),/ ) {
-    print $1;
+if ( $uptime_d =~ /up (\d+) days/ ) {
+    $uptime_d = $1;
 }
 else {
     # If the system has been up for less than one day we could hit this
-    print "WARNING: Uptime format not recognised. Assuming 1 day\n";
+    print "WARNING: Uptime format not recognised, or up for less than a day. Assuming 1 day\n";
     $uptime_d = 1;
 }
 # printf "uname-s = '%s'   uptime = '%s'\n", $uname_s, $uptime_d;
