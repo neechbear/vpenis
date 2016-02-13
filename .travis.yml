@@ -13,4 +13,7 @@ sudo: false             # faster builds as long as you don't need sudo access
 
 # Nothing to install
 install: true
-script: vpenis.pl
+script: 
+    - ls -l
+    - which perl
+    - vpenis.pl
