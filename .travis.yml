@@ -1,6 +1,9 @@
 language: perl
+perl:
+#    - "5.8"
+    - "5.18"
 os:
     - linux
-    - osx
+#    - osx
 
 script: perl vpenis.pl
