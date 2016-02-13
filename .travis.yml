@@ -1,0 +1,6 @@
+language: perl
+os:
+    - linux
+    - osx
+
+script: perl vpenis.pl
