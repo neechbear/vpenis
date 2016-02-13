@@ -26,7 +26,7 @@ if ( $uptime_d =~ /^\s+\S+\s+up\s+(\S+\s+\S+,\s+\S+),/ ) {
 else {
     # If the system has been up for less than one day we could hit this
     print "WARNING: Uptime format not recognised. Assuming 1 day\n";
-    $uptime_d = 0;
+    $uptime_d = 1;
 }
 # printf "uname-s = '%s'   uptime = '%s'\n", $uname_s, $uptime_d;
 
