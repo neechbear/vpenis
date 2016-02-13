@@ -16,4 +16,4 @@ install: true
 script: 
     - ls -l
     - which perl
-    - vpenis.pl
+    - perl vpenis.pl
