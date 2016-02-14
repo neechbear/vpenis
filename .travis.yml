@@ -1,0 +1,21 @@
+---
+language: perl
+
+perl:
+  - "5.8"               # Oldest version on travis-ci
+  - "5.22"
+
+os:
+  - linux
+  - osx
+
+sudo: false             # faster builds as long as you don't need sudo access
+
+# Nothing to install
+
+install: true
+
+# Currently we don't have any test suites, so just run the script directly
+# non zero exit values will be treated as an error
+script:
+    - perl vpenis.pl
