@@ -7,47 +7,45 @@
 
 ## What is it?
 
-  Collects a variety of metrics from the system to generate your "vpenis" score. 
- 
+  Collects a variety of metrics from the system to generate your "vpenis" score.
+
 
 ## The Latest Version
-
 
   Details of the latest version can be found on the official GitHub page
   project page under https://github.com/neechbear/vpenis.
 
   The official project homepage is http://vpenis.sh and http://vpenis.pl.
 
- 
-## Installation
 
+## Installation
 
    ```bash
    curl -s https://raw.githubusercontent.com/neechbear/vpenis/master/vpenis.pl | sudo perl
   ```
-  
+
 
 ## Metrics
 
 The following system characterists go towards your score.
- 
-  
-**Currently implemented**
-  
-    o Nothing
-  
-**Future Functionality**
-  
-    o uptime
-    
-  
 
-  
+**Currently implemented**
+
+    o System uptime
+    o Total clock speed
+    o RAM
+    o Storage
+
+**Future Functionality**
+
+    o Increases score for SSD
+    o pull requests welcome!
+
+
 ## Contact and contributing
 
-
      o Pull requests welcome!
-     
+     o https://github.com/neechbear/vpenis
 
 ## Licensing
 
