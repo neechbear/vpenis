@@ -9,7 +9,7 @@ os:
   - linux
   - osx
 
-sudo: false             # faster builds as long as you don't need sudo access
+sudo: true
 
 # Nothing to install
 
