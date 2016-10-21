@@ -9,11 +9,9 @@ os:
   - linux
   - osx
 
-sudo: true
-
-# Nothing to install
 
 install: true
+
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       sudo apt-get -y install libperl-critic-perl;
