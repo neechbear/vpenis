@@ -33,16 +33,18 @@ The following system characterists go towards your score.
  
   
 **Currently implemented**
-  
-    o Nothing
-  
-**Future Functionality**
-  
-    o uptime
-    
-  
 
-  
+    o System uptime
+    o Total clock speed
+    o RAM
+    o Storage
+
+**Future Functionality**
+
+    o Increases score for SSD
+    o pull requests welcome!
+
+
 ## Contact and contributing
 
 
