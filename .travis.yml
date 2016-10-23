@@ -9,13 +9,18 @@ os:
   - linux
   - osx
 
-sudo: false             # faster builds as long as you don't need sudo access
-
-# Nothing to install
 
 install: true
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      sudo apt-get -y install libperl-critic-perl;
+    fi
 
 # Currently we don't have any test suites, so just run the script directly
 # non zero exit values will be treated as an error
 script:
     - perl vpenis.pl
+    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+        perlcritic vpenis.pl
+      fi
