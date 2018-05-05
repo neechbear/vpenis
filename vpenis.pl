@@ -198,6 +198,7 @@ if ( $uname_s eq 'Linux' ) {
 
     my $dsk_dev        = 0;
     my $partition_size = 0;
+	local $ENV{LANG}='C';
     open( $in, '-|', 'df -k -l' );
     while (<$in>) {
         chomp;
