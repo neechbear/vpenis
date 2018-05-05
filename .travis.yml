@@ -3,7 +3,7 @@ language: perl
 
 perl:
   - "5.8"               # Oldest version on travis-ci
-  - "5.22"
+  - "5.24"
 
 os:
   - linux
@@ -22,5 +22,5 @@ before_install:
 script:
     - perl vpenis.pl
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-        perlcritic vpenis.pl
+            perlcritic vpenis.pl;
       fi
